@@ -1,0 +1,8 @@
+com/projeto/armazem/model/MovimentacaoEstoque.class
+com/projeto/armazem/model/Note.class
+com/projeto/armazem/model/TipoProduto.class
+com/projeto/armazem/model/Produto.class
+com/projeto/armazem/model/Secao.class
+com/projeto/armazem/util/ResourceNotFoundException.class
+com/projeto/armazem/controller/NoteController.class
+com/projeto/armazem/ArmazemApplication.class

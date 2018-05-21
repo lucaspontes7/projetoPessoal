@@ -1,0 +1,9 @@
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/model/Secao.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/model/MovimentacaoEstoque.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/repository/NoteRepository.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/model/Note.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/util/ResourceNotFoundException.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/ArmazemApplication.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/model/Produto.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/controller/NoteController.java
+/home/lucas/Documents/Projeto/armazem/src/main/java/com/projeto/armazem/model/TipoProduto.java
