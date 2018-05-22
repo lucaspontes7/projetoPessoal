@@ -1,12 +1,24 @@
 package com.projeto.armazem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author lucas
  */
-public class Secao {
+@Entity
+@Table(name = "Secao")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Secao implements Serializable {
 
+    @Id
     private int id;
+    @Column(name = "descricao")
     private String descricao;
 
     public Secao() {

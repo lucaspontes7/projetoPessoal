@@ -1,22 +1,35 @@
 package com.projeto.armazem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author lucas
  */
-public class TipoProduto {
+@Entity
+@Table(name = "TipoProduto")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class TipoProduto implements Serializable {
 
+    @Id
     private int id;
+    @Column(name = "descricao")
     private String descricao;
-    private Double volumeMaximoPermitido;
+    @Column(name = "volumeTotalPermitido")
+    private Double volumeTotalPermitido;
 
     public TipoProduto() {
     }
 
-    public TipoProduto(int id, String descricao, Double volumeMaximoPermitido) {
+    public TipoProduto(int id, String descricao, Double volumeTotalPermitido) {
         this.id = id;
         this.descricao = descricao;
-        this.volumeMaximoPermitido = volumeMaximoPermitido;
+        this.volumeTotalPermitido = volumeTotalPermitido;
     }
 
     public int getId() {
@@ -35,12 +48,12 @@ public class TipoProduto {
         this.descricao = descricao;
     }
 
-    public Double getVolumeMaximoPermitido() {
-        return volumeMaximoPermitido;
+    public Double getVolumeTotalPermitido() {
+        return volumeTotalPermitido;
     }
 
-    public void setVolumeMaximoPermitido(Double volumeMaximoPermitido) {
-        this.volumeMaximoPermitido = volumeMaximoPermitido;
+    public void setVolumeTotalPermitido(Double volumeTotalPermitido) {
+        this.volumeTotalPermitido = volumeTotalPermitido;
     }
 
 }
