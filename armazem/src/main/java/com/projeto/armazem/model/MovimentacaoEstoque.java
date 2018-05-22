@@ -1,12 +1,19 @@
 package com.projeto.armazem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  *
@@ -14,6 +21,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "MovimentacaoEstoque")
+@EntityListeners(AuditingEntityListener.class)
+@JsonIgnoreProperties(value = {"dataLancamento"},
+        allowGetters = true)
 public class MovimentacaoEstoque implements Serializable {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,18 +35,31 @@ public class MovimentacaoEstoque implements Serializable {
     private int idProduto;
     @Column(name = "volume")
     private Double volume;
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
+    @Column(name = "datalancamento")
+    private Date dataLancamento;
     @Column(name = "responsavel")
     private String responsavel;
 
     public MovimentacaoEstoque() {
     }
 
-    public MovimentacaoEstoque(Long id, int idSecao, int idProduto, Double volume, String responsavel) {
+    public MovimentacaoEstoque(Long id, int idSecao, int idProduto, Double volume, Date dataLancamento, String responsavel) {
         this.id = id;
         this.idSecao = idSecao;
         this.idProduto = idProduto;
         this.volume = volume;
+        this.dataLancamento = dataLancamento;
         this.responsavel = responsavel;
+    }
+
+    public Date getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(Date dataLancamento) {
+        this.dataLancamento = dataLancamento;
     }
 
     public Long getId() {
@@ -47,11 +70,11 @@ public class MovimentacaoEstoque implements Serializable {
         this.id = id;
     }
 
-    public int getIdDecao() {
+    public int getIdSecao() {
         return idSecao;
     }
 
-    public void setIdDecao(int idSecao) {
+    public void setISecao(int idSecao) {
         this.idSecao = idSecao;
     }
 
