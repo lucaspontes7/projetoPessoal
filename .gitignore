@@ -1,1 +1,4 @@
-/armazem/target/
+.classpath
+.project
+.settings/
+target/
