@@ -29,7 +29,7 @@ public class MovimentacaoEstoqueController {
     MovimentacaoEstoqueService service;
 
     @PostMapping("/inserir")
-    public ResponseEntity inserirBebidaEstoque(@Valid @RequestBody MovimentacaoEstoque movEst) {
+    public ResponseEntity inserirBebidaEstoque(@Valid @RequestBody MovimentacaoEstoque movEst) throws Exception {
         service.salvarMovimentacoes(movEst);
         return new ResponseEntity<>(Boolean.TRUE, HttpStatus.OK);
     }
@@ -48,6 +48,7 @@ public class MovimentacaoEstoqueController {
     public List<VolumeDisponivelPorSecao> listarSecoesDisponiveisArmazenamento() {
         return service.buscarSecoesDisponiveisArmazenamento();
     }
+
     @GetMapping("/listaSecoesDisponiveisVenda")
     public List<VolumeDisponivelPorSecao> listarSecoesDisponiveisVenda() {
         return service.buscarSecoesDisponiveisVenda();
