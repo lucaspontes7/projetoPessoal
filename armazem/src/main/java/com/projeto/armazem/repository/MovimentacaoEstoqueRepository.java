@@ -10,9 +10,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@EnableJpaAuditing
 public class MovimentacaoEstoqueRepository {
 
     @PersistenceContext
